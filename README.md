@@ -69,6 +69,19 @@ The dataset contains images belonging to 43 different traffic sign classes.
 The dataset itself is not included in this repository because of its size.
 
 
+## 📈 Model Performance
+
+The trained CNN model was evaluated on the GTSRB test dataset.
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | 94.35% |
+| Precision | 94.46% |
+| Recall | 94.35% |
+| F1-Score | 94.22% |
+
+The model classifies traffic signs across 43 different classes.
+
 
 \## 🛠️ Technologies Used
 
