@@ -1,8 +1,15 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from PIL import Image
 from keras.models import load_model
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    confusion_matrix
+)
 
 # Load model
 model = load_model("src/my_model.h5", compile=False)
@@ -35,5 +42,19 @@ print("F1 Score :", f1_score(y, y_pred, average="weighted", zero_division=0))
 
 # Confusion matrix
 cm = confusion_matrix(y, y_pred)
+
 print("\nConfusion Matrix Shape:", cm.shape)
 print(cm)
+
+# Save confusion matrix
+plt.figure(figsize=(14, 12))
+plt.imshow(cm)
+plt.title("Traffic Sign Classification - Confusion Matrix")
+plt.xlabel("Predicted Class")
+plt.ylabel("Actual Class")
+plt.colorbar()
+
+plt.savefig("results/confusion_matrix.png", dpi=300, bbox_inches="tight")
+plt.close()
+
+print("\nConfusion matrix saved to results/confusion_matrix.png")
