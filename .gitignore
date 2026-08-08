@@ -1,0 +1,10 @@
+Train/
+Test/
+Meta/
+Train.csv
+Test.csv
+Meta.csv
+
+__pycache__/
+*.pyc
+models/
